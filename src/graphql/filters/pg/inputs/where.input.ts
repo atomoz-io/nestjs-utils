@@ -4,16 +4,16 @@ import { GraphQLFloat, GraphQLInt } from 'graphql';
 
 @InputType({ description: 'Where input for string type' })
 export class StringWhereInput {
-  @Field({ nullable: true, description: 'Equal to' })
+  @Field(() => String, { nullable: true, description: 'Equal to' })
   eq: string;
 
-  @Field({ nullable: true, description: 'Not equal to' })
+  @Field(() => String, { nullable: true, description: 'Not equal to' })
   ne: string;
 
-  @Field({ nullable: true, description: 'Pattern matching expression' })
+  @Field(() => String, { nullable: true, description: 'Pattern matching expression' })
   like: string;
 
-  @Field({ nullable: true, description: 'Case-sensitive pattern matching expression' })
+  @Field(() => String, { nullable: true, description: 'Case-sensitive pattern matching expression' })
   ilike: string;
 
   @Field(() => [String], { nullable: true, description: 'Equal to anything in the list' })
@@ -151,10 +151,10 @@ export class DateTimeWhereInput {
 
 @InputType({ description: 'Where input for boolean type' })
 export class BooleanWhereInput {
-  @Field({ nullable: true, description: 'Equal to' })
+  @Field(() => Boolean, { nullable: true, description: 'Equal to' })
   eq: boolean;
 
-  @Field({ nullable: true, description: 'Not equal to' })
+  @Field(() => Boolean, { nullable: true, description: 'Not equal to' })
   ne: boolean;
 
   @Field(() => [BooleanWhereInput], { nullable: true, description: 'List of AND conditions' })
@@ -172,10 +172,10 @@ export class StringArrayWhereInput {
   @Field(() => [String], { nullable: true, description: 'Contains' })
   contains?: string[];
 
-  @Field({ nullable: true, description: 'Is empty' })
+  @Field(() => Boolean, { nullable: true, description: 'Is empty' })
   isEmpty?: boolean;
 
-  @Field({ nullable: true, description: 'Is not empty' })
+  @Field(() => Boolean, { nullable: true, description: 'Is not empty' })
   isNotEmpty?: boolean;
 }
 

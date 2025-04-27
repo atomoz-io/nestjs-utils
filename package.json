@@ -1,20 +1,31 @@
 {
-  "name": "nestjs-utils",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@martyzaum/nestjs-utils",
+  "version": "1.0.3",
+  "description": "Coleção de utilitários para NestJS",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup \"src/**/*.ts\" --format cjs --dts --out-dir dist --clean",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "nestjs",
+    "utils",
+    "typescript"
+  ],
+  "author": "dev.martyzaum@gmail.com",
+  "license": "MIT",
   "type": "commonjs",
   "dependencies": {
     "@nestjs/common": "^11.1.0",
     "@nestjs/core": "^11.1.0",
     "@nestjs/graphql": "^13.1.0",
     "@willsoto/nestjs-prometheus": "^6.0.2",
+    "class-validator": "^0.14.1",
     "express": "^5.1.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.2",
